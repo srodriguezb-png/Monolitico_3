@@ -1,0 +1,219 @@
+/* ========== VARIABLES ========== */
+:root {
+  --bg: #0f0c1d;
+  --bg-2: #1a1530;
+  --superficie: rgba(255, 255, 255, 0.06);
+  --borde: rgba(255, 255, 255, 0.12);
+  --violeta: #8b5cf6;
+  --cian: #22d3ee;
+  --texto: #ecebf5;
+  --texto-suave: #a8a3c4;
+  --radio: 18px;
+  --brillo: 0 0 24px rgba(139, 92, 246, 0.35);
+  --transicion: 0.3s ease;
+}
+
+/* ========== RESET ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.65;
+  color: var(--texto);
+  min-height: 100vh;
+  padding: clamp(16px, 4vw, 40px);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(139, 92, 246, 0.25), transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(34, 211, 238, 0.18), transparent 40%),
+    linear-gradient(160deg, var(--bg), var(--bg-2)) fixed;
+}
+
+/* ========== CONTENEDOR ========== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ========== TÍTULOS ========== */
+h1 {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, var(--violeta), var(--cian));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 32px 0 16px;
+  color: var(--texto);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+h2::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--cian);
+  box-shadow: 0 0 12px var(--cian);
+}
+
+h3 {
+  color: var(--cian);
+  margin: 18px 0 10px;
+}
+
+p {
+  color: var(--texto-suave);
+  margin-bottom: 12px;
+}
+
+a {
+  color: var(--cian);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========== TARJETAS (cristal) ========== */
+.card {
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  padding: 26px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: transform var(--transicion), border-color var(--transicion), box-shadow var(--transicion);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--violeta);
+  box-shadow: var(--brillo);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* ========== BOTONES ========== */
+button,
+.btn {
+  background: linear-gradient(135deg, var(--violeta), var(--cian));
+  color: #fff;
+  border: none;
+  padding: 11px 26px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transicion), box-shadow var(--transicion), filter var(--transicion);
+}
+
+button:hover,
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--brillo);
+  filter: brightness(1.1);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ========== FORMULARIOS ========== */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 11px 16px;
+  font: inherit;
+  color: var(--texto);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  transition: border-color var(--transicion), box-shadow var(--transicion);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--texto-suave);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--cian);
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.18);
+}
+
+select option {
+  background: var(--bg-2);
+}
+
+/* ========== TABLAS ========== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+}
+
+th {
+  text-align: left;
+  padding: 14px 18px;
+  color: var(--cian);
+  background: rgba(139, 92, 246, 0.18);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+td {
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--borde);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr:hover td {
+  background: rgba(139, 92, 246, 0.12);
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--violeta);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
