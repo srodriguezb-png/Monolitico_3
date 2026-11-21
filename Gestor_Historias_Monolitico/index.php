@@ -27,7 +27,6 @@ $pagina = $_GET['pagina'] ?? 'inicio';
 
 <body>
 
-    <h1>Gestor de Historias de Usuario</h1>
 
     <nav>
         <a href="index.php">Inicio</a> |

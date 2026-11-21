@@ -41,7 +41,9 @@ $sprints = $controlador->listar();
 
 <h2>Registrar nuevo Sprint</h2>
 
-<form method="POST">
+<a href="index.php?pagina=crear_sprint">
+    Registrar nuevo Sprint
+</a>
 
     <label>Nombre del Sprint:</label>
     <input
